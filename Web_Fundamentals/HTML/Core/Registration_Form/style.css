@@ -1,0 +1,15 @@
+body{
+    width: 460px;
+    color: red;
+    background-color: black;
+    font-family: monospace;
+    border-style: solid;
+    border-color: black;
+
+    border: 2px solid red;
+    border-radius: 20px;
+    padding: 5px;
+}
+div{
+    margin: 10px;
+}
