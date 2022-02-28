@@ -17,7 +17,51 @@
         console.log(i);
       }
     }
-  }
+}
+
+
+var arr1 = ["a","b","c","d","e"]; //arr1.length = 6
+
+
+
+for(var i=0; i < arr1.length/2;i++){//i=2 < (5)/2
+var temp = 0;
+
+temp = arr1[arr1.length-1-i]; //[5-1-1] = arr1[3] = "d"
+arr1[arr1.length-1-i] = arr1[i]; //arr1[3] <-- arr[1] = "b"
+arr1[i] = temp; //arr1[1] <--d
+//i=2
+}
+
+//1st iteration: arr1 = ["e","b","c","d","a"];
+//2nd iteration: arr1 = ["e","d","c","b","a"];
+
+
+var arr = ["a", "b", "c", "d", "e"];
+
+function arraySwap(arr) {
+    for(var left = 0; left < arr.length/2; left++){
+        var right = arr.length - 1 - left;
+        var temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp
+    }
+    return(arr)
+}
+
+console.log(arraySwap(arr))
+
+
+
+
+
+
+
+
+
+
+
+
 
   divisible();
 
@@ -25,3 +69,5 @@
 
 </body>
 </html>
+
+
