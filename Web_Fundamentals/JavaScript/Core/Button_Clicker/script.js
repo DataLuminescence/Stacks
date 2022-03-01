@@ -8,11 +8,10 @@ function buttonRename(element){
 
 function likeCounter(element){
     element.innerHTML =  parseInt(element.innerHTML) + 1 + " Likes";
-    alert("Ninja was liked " );
+    alert("Ninja was liked " + element.innerHTML + " times!");
 }
 
 function buttonDelete(element){
-    //element.remove();
     element.style = "display: none;"
 }
 
