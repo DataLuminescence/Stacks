@@ -1,0 +1,176 @@
+
+/**************************** GENERAL CSS ****************************/
+
+* {
+    margin:0px;
+    padding:0px;
+    border: 0px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bold;
+}
+
+a {
+    color: #333333;
+}
+
+input {
+    height: 25px;
+    width: 40%;
+}
+
+#container {
+    margin: auto;
+    max-width: 1440px;
+    min-width: 1024px;
+}
+
+.main-box{
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.col-2 {
+    width: 30%;
+}
+
+.col-3 {
+    width: 60%;
+}
+
+/**************************** NAV BAR CSS ****************************/
+
+.nav {
+    width: 80%;
+    background-color: #333333;
+    color: #17a2b8;
+    margin: 0 auto 50px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.nav h1 {
+    margin-left: 40px;
+}
+
+.nav a {
+    color: #17a2b8; 
+}
+a:hover {
+    color: whitesmoke;
+}
+
+.logbtn{
+    background-color: #17a2b8;
+    border: 2px solid black;
+    border-radius: 0px;
+    box-shadow: 3px 3px black;
+    color: #333333;
+    width: 125px;
+    height:40px;
+    margin-right: 40px;
+}
+
+.btn {
+    background-color: #17a2b8;
+    border: 2px solid black;
+    border-radius: 0px;
+    box-shadow: 3px 3px black;
+    color: #333333;
+    width: 125px;
+    height:40px;
+}
+button.btn:hover{
+    background: #333333;
+    color: #17a2b8;
+    transition: all .8s ease-out;
+    cursor: pointer;
+}
+
+/************************** LEFT BOX CSS ****************************/
+
+.box1 {
+    border: 4px solid #333333;
+    background: white;
+    height: 180px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.box1-header {
+    background-color: #333333;
+    color: white;
+    height: 100%;
+    width: 20%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.box1-content {
+    height: 100%;
+    width: 70%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+/***************** Right BOX CSS ****************************/
+
+.box2 {
+    border: 4px solid #333333;
+    background: white;
+    height: 180px;
+    width: 125%;
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+.box2 p {
+    color: #333333;
+    /* height: 100%;
+    width: 20%;
+    padding-left: 3%;
+    padding-right: 3%; */
+}
+
+/***************** GENERIC CSS ****************************/
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-around {
+    align-content: space-around;
+}
+
+.align-evenly {
+    align-content: space-evenly;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-around {
+    justify-content:space-around
+}
