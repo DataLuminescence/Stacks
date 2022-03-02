@@ -9,50 +9,23 @@
 </head>
 <body>
     <div id="container">
-
-        <div class="nav flex justify-between align-center">
-            <h1>Dojonary</h1>
-            <input type="search" placeholder="Search">
-            <button class="logbtn" onclick="buttonRename(this)">Login</button>
-        </div>
-
         <div class="main-box">
-            <div class="col-3">
-                <div class="box1 flex flex-row justify-around align-evenly">
-                    <div class="box1-header flex flex-column justify-around">
-                        <h1 style="font-size: 40px;">ninja</h1>
-                        <p style="font-size: 20px; text-align: center;">noun</p>
-                        <p style="font-size: 15px; font-style: italic;">Plural: ninjas</p>
-                        <button class="btn flex align-center justify-center" 
-                        onclick="likeCounter(this)">13 Likes</button>
+
+            <div class="box1">
+                <div class="box1-header flex justify-between">
+                    <h1>Some User</h1>
+                    <div class="box1-like flex justify-between">
+                        <p id="test">1</p>
+                        <p> like(s)</p>
+                        <button class="btn" onclick="likeCounter()">Like</button>
                     </div>
-                    <div class="box1-content flex align-center">
-                        <p>A practitioner skiller in the
-                        <a href="https://www.freecodecamp.org/">Japanese</a> art of
-                        <a href="https://www.freecodecamp.org/">ninjutsu</a></p>
-                    </div>
+                </div>      
+                <div class="box1-content flex">
+                    <p>
+                        So this is the story all about how my 
+                        buttons got flipped to upside down
+                    </p>
                 </div>
-                <div class="box1 flex flex-row justify-around align-evenly">
-                    <div class="box1-header flex flex-column justify-around">
-                        <h1 style="font-size: 40px;">ninja</h1>
-                        <p style="font-size: 20px; text-align: center;">noun</p>
-                        <p style="font-size: 15px; font-style: italic;">Plural: ninjas</p>
-                        <button class="btn flex align-center justify-center"
-                        onclick="likeCounter(this)">37 Likes</button>
-                    </div>
-                    <div class="box1-content flex align-center">
-                        <p>A <a href="https://www.freecodecamp.org/">programmer</a> who breaks
-                        problems with <a href="https://www.freecodecamp.org/">zen</a>-like 
-                        focus</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="box2 flex flex flex-column justify-around">
-                    <p>Dojonary is defined by you</p>
-                    <button class="btn flex align-center justify-center" onclick="buttonDelete(this)">Add Description</button>
-                </div>
-            </div>
             </div>
         </div>
     </div>
