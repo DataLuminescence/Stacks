@@ -1,10 +1,10 @@
 
 var count = 1;
-var countElement = document.querySelector("#test");
+var countElement = document.querySelector("#count");
 console.log(countElement);
 
 function likeCounter(){
     count++;
-    countElement.innerTest = count + " likes";
+    countElement.innerText = count + " likes";
 
 }
