@@ -5,55 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Profile</title>
+    <title>Liking Likes</title>
 </head>
 <body>
-    <div id="container">
+    <div class="container">
 
         <div class="nav flex justify-between align-center">
-            <h1>Dojonary</h1>
-            <input type="search" placeholder="Search">
-            <button class="logbtn" onclick="buttonRename(this)">Login</button>
+            <h1>Network</h1>
+        </div>
+        <div class="feed flex justify-center align-center">
+            <h2>Your Feed</h2>
         </div>
 
         <div class="main-box">
+            
+            <div class="col-1">
+                <div class="box1">
+                    <img src="./CatProfile.JPG" alt="">
+                    <a href="">Add an avatar</a>
+                    <h1>Leonardo Robles</h1>
+                </div>
+            </div>
+
             <div class="col-3">
-                <div class="box1 flex flex-row justify-around align-evenly">
-                    <div class="box1-header flex flex-column justify-around">
-                        <h1 style="font-size: 40px;">ninja</h1>
-                        <p style="font-size: 20px; text-align: center;">noun</p>
-                        <p style="font-size: 15px; font-style: italic;">Plural: ninjas</p>
-                        <button class="btn flex align-center justify-center" 
-                        onclick="likeCounter(this)">13 Likes</button>
+
+                <div class="box2">
+                    <div class="box2-header">
+                        <h1>Neil M</h1>
+                        <div class="box2-like">
+                            <p id="count1">9 like(s)</p>
+                            <button class="btn" onclick="likeCounter('count1')">Like</button>
+                        </div>
                     </div>
-                    <div class="box1-content flex align-center">
-                        <p>A practitioner skiller in the
-                        <a href="https://www.freecodecamp.org/">Japanese</a> art of
-                        <a href="https://www.freecodecamp.org/">ninjutsu</a></p>
-                    </div>
-                </div>
-                <div class="box1 flex flex-row justify-around align-evenly">
-                    <div class="box1-header flex flex-column justify-around">
-                        <h1 style="font-size: 40px;">ninja</h1>
-                        <p style="font-size: 20px; text-align: center;">noun</p>
-                        <p style="font-size: 15px; font-style: italic;">Plural: ninjas</p>
-                        <button class="btn flex align-center justify-center"
-                        onclick="likeCounter(this)">37 Likes</button>
-                    </div>
-                    <div class="box1-content flex align-center">
-                        <p>A <a href="https://www.freecodecamp.org/">programmer</a> who breaks
-                        problems with <a href="https://www.freecodecamp.org/">zen</a>-like 
-                        focus</p>
+                    <div class="box2-text">
+                        <p>
+                            I just set up this discord bot, let me
+                            know what you all think. <a href="">link</a>
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-2">
-                <div class="box2 flex flex flex-column justify-around">
-                    <p>Dojonary is defined by you</p>
-                    <button class="btn flex align-center justify-center" onclick="buttonDelete(this)">Add Description</button>
+            
+                <div class="box2">
+                    <div class="box2-header">
+                        <h1>Nichole K</h1>
+                        <div class="box2-like">
+                            <p id="count2">12 like(s)</p>
+                            <button class="btn" onclick="likeCounter('count2')">Like</button>
+                        </div>
+                    </div>      
+                    <div class="box2-text">
+                        <p>
+                            Just finished my <a href="">next comic</a>, check it out.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            </div>
+                <div class="box2">
+                    <div class="box2-header">
+                        <h1>Jim R</h1>
+                        <div class="box2-like">
+                            <p id="count3">9 like(s)</p>
+                            <button class="btn" onclick="likeCounter('count3')">Like</button>
+                        </div>
+                    </div>      
+                    <div class="box2-text">
+                        <p>
+                            I can't stop listening to the <a href="">new album</a>. 
+                            Who else is liking it?
+                        </p>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
     <script src="script.js"></script>
