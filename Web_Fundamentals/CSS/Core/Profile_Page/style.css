@@ -1,0 +1,234 @@
+
+/**************************** GENERAL CSS ****************************/
+
+* {
+    margin:0px;
+    padding:0px;
+    border: 0px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bold;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-box {
+    height: 700px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+/**************************** NAV BAR CSS ****************************/
+
+.nav {
+    background-color: #333333;
+    color: #17a2b8;
+    padding-right: 14%;
+    padding-left: 4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.nav-content {
+    width: 80%;
+    margin: auto;
+}
+.nav-links {
+    width: 66%;
+}
+.nav a {
+    color: #17a2b8; 
+}
+a:hover {
+    color: whitesmoke;;
+}
+.btn {
+    background-color: #17a2b8;
+    border: 2px solid black;
+    border-radius: 0px;
+    box-shadow: 3px 3px black;
+    color: #333333;
+    width: 100px;
+    height:25px;
+}
+button.btn:hover{
+    background: #333333;
+    color: #17a2b8;
+    transition: all .8s ease-out;
+    cursor: pointer;
+}
+
+/**************************** PROFILE CSS ****************************/
+
+.col-1 {
+    padding: 4.5%;
+}
+
+.col-2 {
+    flex: 2;
+    height: fit-content;
+    width: 40%;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+.col-3 {
+    flex: 3;
+    height: 600px;
+    width: 60%;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+.user-card {
+    margin: 0 auto;
+    width: 100%;
+    border: 4px solid #333333;
+    background-color: #17a2b8;
+}
+
+.card-header {
+    background-color: #333333;
+    height: 80px;
+    padding-top: 40px;
+    padding-left: 50px;
+    margin-bottom: 100px;
+}
+
+.card-header img {
+    height: 150px;
+    width: auto;
+    border: 4px solid #333333;
+    border-radius: 50%;
+}
+
+.card-body {
+    margin-left: 25px;
+}
+
+.card-body h1, .card-body div, .card-body p {
+    margin-bottom: 10px;
+}
+
+.card-body img {
+    height: 25px;
+    margin-right: 10px;
+    width: auto;
+}
+
+/************************** EDUCATION CSS ****************************/
+
+.edu-box {
+    height: 180px;
+    width: 100%;
+    margin: 0 auto;
+    border: 4px solid #333333;
+    margin-top: 20px;
+    background: #17a2b8;
+}
+
+.edu-header {
+    background-color: #333333;
+    color: white;
+    height: 25%;
+    width: 97%;
+    padding-left: 3%;
+}
+
+.edu-content {
+    height: 72%;
+    width: 97%;
+    padding-left: 3%;
+    /* padding-top: 3%; */
+    padding-top: 1%;
+}
+
+/***************** REQUEST CONNECTION CSS ****************************/
+
+.req-box {
+    height: fit-content;
+    width: 300px;
+    border: 4px solid #333333;
+    background: #17a2b8;
+    margin-bottom: 5%;
+}
+
+.req-num {
+    background: #333333;
+    color: white;
+    padding-right: 9%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+.req-num .req-circle {
+    background-color: white;
+    color: #333333;
+    border-radius: 50%;
+    margin-left: 8px;
+    padding-top: 13px;
+    padding-right: 16px;
+    padding-bottom: 11px;
+    padding-left: 16px;
+}
+
+.req-box img{
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/******************* YOUR CONNECTION CSS *****************************/
+
+.req-box .con-more {
+    height: 60px;
+    background-color: #333333;
+    padding-left: 3%;
+}
+
+.req-box .con-more a {
+    color: white; 
+    text-decoration: underline;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-around {
+    align-content: space-around;
+}
+
+.align-evenly {
+    align-content: space-evenly;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-around {
+    justify-content:space-around
+}
