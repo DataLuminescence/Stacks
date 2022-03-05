@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
 
@@ -27,17 +28,11 @@
         <div class="col-l">
 
             <!-- this is a placeholder replace it with a real video -->
-            <video width="720" height="400" controls>
-                <source onmouseover="videoPlay(this)"  src="./assets/video.mp4" type="video/mp4">
-                <source onmouseout="videoStop(this)"  src="./assets/video.mp4" type="video/mp4">
-            </video>
-            <!-- <figure class="placeholder">
-                <svg style="text-anchor:middle;" width="720" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 720x400" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" dy=".3em" fill="#dee2e6" >Replace Me!</text>
-                </svg>
-            </figure> -->
+            
+            <video id="video" src="./assets/video.mp4" 
+            onmouseover="videoPlay(this)" 
+            onmouseout="videoStop(this)"
+            width="720" height="400" loop muted></video>
 
             <!-- video info -->
             <div class="row">
