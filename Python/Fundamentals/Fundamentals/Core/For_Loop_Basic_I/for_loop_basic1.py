@@ -10,8 +10,7 @@ def counting_the_dojo_way():
     for x in range(1,101):
         if(x%5 == 0):
             print("Coding")
-
-        if(x%10 == 0):
+        elif(x%10 == 0):
             print("Coding Dojo")
         else:
             print(x)
