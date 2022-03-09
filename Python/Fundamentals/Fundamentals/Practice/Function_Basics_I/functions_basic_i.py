@@ -72,18 +72,24 @@
 # print(addition(3,5))
 
 
-# #11
-b = 500
-print(b)
-def foobar():
-    b = 300
-    print(b)
-print(b)
-foobar()
-print(b)
+# #11 Prediction: We will print 500 before the function begins. The function has not yet been called so we will ignore the
+# next 3 lines and print b with a value of 500 once more. Then we call the function which creates a local variable of b 
+# and gives it a value of 300. b will then be printed with this value. Then we use the value of b outside the function
+# to print be as 500 once more
+# b = 500
+# print(b)
+# def foobar():
+#     b = 300
+#     print(b)
+# print(b)
+# foobar()
+# print(b)
 
 
-# #12
+# #12 Prediction: We will print 500 before the function begins. The function has not yet been called so we will ignore the
+# next 4 lines and print b with a value of 500 once more. Then we call the function which creates a local variable of b 
+# and gives it a value of 300. Function returns a value of 300 for b but does not set it equal to b variable outside 
+# function. Therefore when b prints againt we print 500 one more time.
 # b = 500
 # print(b)
 # def foobar():
@@ -95,7 +101,11 @@ print(b)
 # print(b)
 
 
-# #13
+#13 Prediction: We will print 500 before the function begins. The function has not yet been called so we will ignore the
+# next 4 lines and print b with a value of 500 once more. The variable b is printed out one more time with a value of 500.
+# Then we call the function which creates a local variable of b and gives it a value of 300. This value is printed out 
+# from within the function  Then we set b equal to the returned value of the function (300). We print b with a value of 
+# 300. 
 # b = 500
 # print(b)
 # def foobar():
@@ -107,7 +117,7 @@ print(b)
 # print(b)
 
 
-# #14
+#14 Prediction: We call foo function and print 1 then call bar which prints 3 then foo resumes printing 2
 # def foo():
 #     print(1)
 #     bar()
@@ -117,14 +127,15 @@ print(b)
 # foo()
 
 
-# #15
-# def foo():
-#     print(1)
-#     x = bar()
-#     print(x)
-#     return 10
-# def bar():
-#     print(3)
-#     return 5
-# y = foo()
-# print(y)
+#15 Prediction: Call foo function to set y to the return value of function. Print 1, then call bar function 
+# when setting x to return value of bar. Print 3. Print 5. Print 10.
+def foo():
+    print(1)
+    x = bar()
+    print(x)
+    return 10
+def bar():
+    print(3)
+    return 5
+y = foo()
+print(y)
