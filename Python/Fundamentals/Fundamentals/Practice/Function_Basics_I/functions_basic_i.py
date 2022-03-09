@@ -129,13 +129,13 @@
 
 #15 Prediction: Call foo function to set y to the return value of function. Print 1, then call bar function 
 # when setting x to return value of bar. Print 3. Print 5. Print 10.
-def foo():
-    print(1)
-    x = bar()
-    print(x)
-    return 10
-def bar():
-    print(3)
-    return 5
-y = foo()
-print(y)
+# def foo():
+#     print(1)
+#     x = bar()
+#     print(x)
+#     return 10
+# def bar():
+#     print(3)
+#     return 5
+# y = foo()
+# print(y)
