@@ -54,11 +54,7 @@ iterateDictionary(students)
 
 def iterateDictionary2(key_name, some_list):
     for dict in some_list:
-        tempstring = ""
-        for i,key in enumerate(dict):
-            if(key == key_name):
-                tempstring += f"{dict[key]}"
-        print(tempstring)
+        print(dict[key_name])
 
 iterateDictionary2('first_name', students)
 
@@ -72,11 +68,13 @@ dojo = {
 }
 
 def printInfo(some_dict):
-    for some_list in some_dict:
-        print()
-        print(len(some_dict[some_list]), str(some_list).upper() ) 
-        for x in some_dict[some_list]:
-            print(x)
+    for i,key in enumerate(some_dict):#I know there is a more optized way to do the formatting of the \n
+        if i < len(some_dict)-1:
+            print(f"{len(some_dict[key])} {key.upper()}" )
+        else:
+            print(f"\n{len(some_dict[key])} {key.upper()}") 
+        for item in some_dict[key]:
+            print(item)
 
 printInfo(dojo)
 
