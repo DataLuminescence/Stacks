@@ -1,7 +1,7 @@
 x = [ [5,2,3], [10,8,9] ] 
 
-# x[1][0] = 15
-# print(x)
+x[1][0] = 15
+print(x)
 
 ########################################################################################################################
 
@@ -10,8 +10,8 @@ students1 = [
     {'first_name' : 'John', 'last_name' : 'Rosales'}
 ]
 
-# students1[0]['last_name'] = 'Bryant'
-# print(students1)
+students1[0]['last_name'] = 'Bryant'
+print(students1)
 
 ########################################################################################################################
 
@@ -20,15 +20,15 @@ sports_directory = {
     'soccer' : ['Messi', 'Ronaldo', 'Rooney']
 }
 
-# sports_directory['soccer'][1] = 'Andres'
-# print(sports_directory)
+sports_directory['soccer'][1] = 'Andres'
+print(sports_directory)
 
 ########################################################################################################################
 
 z = [ {'x': 10, 'y': 20} ]
 
-# z[0]['y'] = 30
-# print(z)
+z[0]['y'] = 30
+print(z)
 
 ########################################################################################################################
 
@@ -48,7 +48,7 @@ def iterateDictionary(some_list):
                 tempstring += ", "
         print(tempstring)
 
-# iterateDictionary(students) 
+iterateDictionary(students) 
 
 def iterateDictionary2(key_name, some_list):
     for dict in some_list:
@@ -58,9 +58,9 @@ def iterateDictionary2(key_name, some_list):
                 tempstring += f"{dict[key]}"
         print(tempstring)
 
-# iterateDictionary2('first_name', students)
+iterateDictionary2('first_name', students)
 
-# iterateDictionary2('last_name', students)
+iterateDictionary2('last_name', students)
 
 dojo = {
     'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
@@ -75,6 +75,3 @@ def printInfo(some_dict):
             print(x)
 
 printInfo(dojo)
-
-
-
