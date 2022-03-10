@@ -50,6 +50,8 @@ def iterateDictionary(some_list):
 
 iterateDictionary(students) 
 
+########################################################################################################################
+
 def iterateDictionary2(key_name, some_list):
     for dict in some_list:
         tempstring = ""
@@ -61,6 +63,8 @@ def iterateDictionary2(key_name, some_list):
 iterateDictionary2('first_name', students)
 
 iterateDictionary2('last_name', students)
+
+########################################################################################################################
 
 dojo = {
     'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
@@ -75,3 +79,5 @@ def printInfo(some_dict):
             print(x)
 
 printInfo(dojo)
+
+########################################################################################################################
