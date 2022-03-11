@@ -32,8 +32,6 @@ class BankaAccount:		# here's what we have so far
             self.balance += self.balance*self.interestRate
         return self
 
-
-
 checking = BankaAccount(.01, 1000)
 savings = BankaAccount(.05, 20000)
 
