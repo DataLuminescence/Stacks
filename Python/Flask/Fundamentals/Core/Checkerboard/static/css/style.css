@@ -1,0 +1,24 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+h1{
+    font-size: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.blue-box {
+    height: 200px;
+    width: 200px;
+
+    border: 2px solid black;
+    margin-left: 20px;
+    margin-bottom:  20px;
+}
