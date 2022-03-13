@@ -3,8 +3,8 @@ from optparse import check_builtin
 
 class BankAccount:
     accounts = []
-    def __init__(self, interestRate, balance):
-        self.interestRate = interestRate #Attribute that each new bank instance will have
+    def __init__(self, interest_rate, balance):
+        self.interest_rate = interest_rate #Attribute that each new bank instance will have
         self.balance = balance #Attribute that each new bank instance will have
         BankAccount.accounts.append(self) #Creates a record in accounts list of each new bank account created
     
@@ -14,19 +14,20 @@ class BankAccount:
         return self
 
     def withdrawal(self, amount):
-        if(self.balance >= amount):
-            self.balance -= amount
-        else:
-            print("Insufficient funds: Charging a $5 fee")
+        self.balance -= amount
+        if(self.balance < 0):
             self.balance -= 5
+            print("Insufficient funds: Charging a $5 fee")
+            
         return self
 
     def display_account_info(self):
-        return(f"{self.balance}")
+        print(f"{self.balance}")
+        return self
 
     def yield_interest(self):
         if(self.balance > 0):
-            self.balance += self.balance*self.interestRate
+            self.balance += self.balance*self.interest_rate
         return self
 
     @classmethod
@@ -37,17 +38,17 @@ class BankAccount:
 class User:
     def __init__(self, name):
         self.name = name
-        self.account = {"checking" : BankAccount(interestRate=.02, balance=1000),
-                        "savings" : BankAccount(interestRate=.02, balance=800)
+        self.account = {"checking" : BankAccount(interest_rate=.02, balance=1000),
+                        "savings" : BankAccount(interest_rate=.02, balance=800)
         }
 
-    def make_deposit(self, amount):
-        self.account["checking"].deposit(amount)
+    def make_deposit(self, amount ,account):
+        self.account[account].deposit(amount) #Update
 
     def make_withdrawal(self, amount):
         self.account["checking"].withdrawal(amount)
 
-    def display_user_balance(self):
+    def display_user_balance(self): # pass info update
         print(f"User: {self.name}, Checking Balance: {self.account['checking'].display_account_info()}")
         print(f"User: {self.name}, Savings Balance: {self.account['savings'].display_account_info()}")
         return self

@@ -4,11 +4,11 @@ from flask import Flask #import flask and allow us to create our application
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
+def hello():
     return "Hello World!"
 
 @app.route("/dojo")
-def hello_dojo():
+def dojo():
     return "Dojo!"
 
 #/say/hello
@@ -17,8 +17,8 @@ def say(name):
     return f"Hi, {str(name)}!" #Is  str() redundant here?
 
 #/repeat/36/hello
-@app.route('/repeat/<int:number>/<greeting>')
-def repeat(number, greeting): 
+@app.route('/repeat/<greeting>/<int:number>')
+def repeat(greeting, number): 
     output = ""
     for i in range(0, number):
         output += f"<p>{greeting}</p>"
