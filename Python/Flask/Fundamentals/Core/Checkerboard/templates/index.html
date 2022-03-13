@@ -1,0 +1,60 @@
+<!-- <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="{{ url_for('static', filename='css/style.css') }}"
+>
+
+<link   
+    type="text/javascript"
+    href="{{ url_for('static', filename='js/my_script.js') }}"
+> -->
+
+<!-- <img src="{{ url_for('static', filename='img/my_img.png') }}" alt=""/> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground 1</title>
+<style>
+* {
+    margin:0px;
+    padding:0px;
+}
+h1{
+    font-size: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.blue-box {
+    height: 200px;
+    width: 200px;
+
+    border: 2px solid black;
+    margin-left: 20px;
+    margin-bottom:  20px;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <div class="box-container">
+            {% for i in range(number) %}
+            <div class="blue-box" style="background-color:{{color}}"></div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
