@@ -10,15 +10,31 @@ h1{
     font-family: sans-serif;
 }
 .box-container {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
-.blue-box {
-    height: 200px;
-    width: 200px;
 
-    border: 2px solid black;
-    margin-left: 20px;
-    margin-bottom:  20px;
+.box-patter {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 50px;
+}
+
+.box-red {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+}
+
+.box-black {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+
 }

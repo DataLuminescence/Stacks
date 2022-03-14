@@ -20,9 +20,23 @@
 <body>
     <div class="container">
         <h1>Welcome!</h1>
+        <!-- outter loop creates determines how many rows we create -->
+        <!-- inner loop creates one line 1x8 black-red pattern -->
+        <!-- inner loop creates one line 1x8 black-red pattern -->
         <div class="box-container">
-            {% for i in range(number) %}
-            <div class="blue-box" style="background-color:{{color}}"></div>
+            {% for i in range(y) %}
+            <div class="box-patter">
+                {% for i in range(x) %}
+                <div class="box-red" style="background-color:{{color1}}"></div>
+                <div class="box-black" style="background-color:{{color2}}"></div>
+                {% endfor %}
+            </div>
+            <div class="box-patter">
+                {% for i in range(x) %}
+                <div class="box-black" style="background-color:{{color2}}"></div>
+                <div class="box-red" style="background-color:{{color1}}"></div>
+                {% endfor %}
+            </div>
             {% endfor %}
         </div>
     </div>
