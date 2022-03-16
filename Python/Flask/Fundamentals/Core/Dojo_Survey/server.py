@@ -6,26 +6,21 @@ app.secret_key = "asdfghjkl"
 def index():
     return render_template("index.html")
 
-@app.route('/users', methods=['POST'])
-def create_user():
+@app.route('/process', methods=['POST'])
+def process():
     print("Got Post Info")
     form = {
-                'name': request.form['name'],
-                'location': request.form['location'],
-                'language': request.form['language'],
-                'comment': request.form['comment'],
+        'name': request.form['name'],
+        'location': request.form['location'],
+        'language': request.form['language'],
+        'comment': request.form['comment']
             }
     session['form'] = form
     return redirect('/result/')
 
 @app.route('/result/')
-def counter():
-    return render_template("results.html")
-
-@app.route('/destroy_session/')
-def clear():
-    session.clear()
-    return redirect('/')
+def result():
+    return render_template("results.html", result = session['form'])
 
 if __name__=="__main__":
     app.run(debug=True)

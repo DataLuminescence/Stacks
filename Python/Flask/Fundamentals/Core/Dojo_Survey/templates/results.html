@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <link   
+        type="text/javascript"
+        href="{{ url_for('static', filename='js/my_script.js') }}"
+    >
+
+</head>
+<body>
+    <div class="container">
+        <div class="box-survey">
+            <h1>Submitted Info</h1>
+            <div class="box">
+                <label for="Name">Name: </label>
+                <p>{{result['name']}}</p>
+            </div>
+            <div class="box">
+                <label for="Dojo Location">Dojo Location:</label>
+                <p>{{result['location']}}</p>
+            </div>
+            <div class="box">
+                <label for="Favorite Language">Favorite Language:</label>
+                <p>{{result['language']}}</p>
+            </div>
+            <div class="box">
+                <label for="Comments">Comments:</label>
+            </div>
+            
+            <div class="comment">
+                <textarea name="comment" id="" cols="30" rows="10">{{result['comment']}}</textarea>
+            </div>
+            <form action="/">
+                <button class="button2">Go back</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

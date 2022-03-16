@@ -15,43 +15,46 @@
 
 </head>
 <body>
-    <form action="/result" method="post">
-
+    <form action="/process" method="post">
     <div class="container">
-        <h1>Dojo Survery</h1>
-        <div class="box">
-            <label>Name: </label>
-            <input type="text" name="first_name" placeholder="John">
-        </div>
-        <div class="box">
-            <label for="Language">Dojo Location: </label>
-            <select name="Language">
-                <option>Bellevue, WA</option>
-                <option>Boise, ID</option>
-                <option>Chicago, IL</option>
-                <option>Los Angeles, CA</option>
-                <option>Silicon Valley, CA</option>
-            </select>
-        </div>
-
-        <div class="box">
-            <label for="Language">Favorite Language: </label>
-            <select name="Language">
-                <option>Ada</option>
-                <option>Fortran</option>
-                <option>Pascal</option>
-                <option>Java</option>
-            </select>
-        </div>
-        <div class="box">
-            <label for="Language">Comments: </label>
-            <input type="text">
-        </div>
-        <div>
-            <input type="submit" value="Submit">
+        <div class="box-survey">
+            <h1>Dojo Survery</h1>
+            <div class="box">
+                <label>Name: </label>
+                <input type="text" name="name" placeholder="John">
+            </div>
+            <div class="box">
+                <label for="Location">Dojo Location: </label>
+                <select name="location">
+                    <option>Bellevue, WA</option>
+                    <option>Boise, ID</option>
+                    <option>Chicago, IL</option>
+                    <option>Los Angeles, CA</option>
+                    <option>Silicon Valley, CA</option>
+                </select>
+            </div>
+    
+            <div class="box">
+                <label for="Language">Favorite Language: </label>
+                <select name="language">
+                    <option>Ada</option>
+                    <option>Fortran</option>
+                    <option>Pascal</option>
+                    <option>Java</option>
+                </select>
+            </div>
+            <div class="box">
+                <label for="comment">Comment (optional): </label>
+                
+            </div>
+            <div class="comment">
+                <textarea name="comment" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
         </div>
     </div>
     </form>
-
 </body>
 </html>
