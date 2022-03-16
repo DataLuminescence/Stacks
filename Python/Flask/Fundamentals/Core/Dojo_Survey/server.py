@@ -4,16 +4,23 @@ app.secret_key = "asdfghjkl"
 
 @app.route('/')
 def index():
-    if 'counter' not in session:
-        session['counter'] = 1
-    else:
-        session['counter'] += 1
-    return render_template("index.html", counter=session['counter'])
+    return render_template("index.html")
 
-@app.route('/increment/')
+@app.route('/users', methods=['POST'])
+def create_user():
+    print("Got Post Info")
+    form = {
+                'name': request.form['name'],
+                'location': request.form['location'],
+                'language': request.form['language'],
+                'comment': request.form['comment'],
+            }
+    session['form'] = form
+    return redirect('/result/')
+
+@app.route('/result/')
 def counter():
-    session['counter'] += 1
-    return redirect('/')
+    return render_template("results.html")
 
 @app.route('/destroy_session/')
 def clear():
