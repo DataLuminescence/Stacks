@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+    <link type="text/javascript" href="{{ url_for('static', filename='js/my_script.js') }}">
+
+</head>
+<body>
+    <form action="/process" method="post">
+        {% for dog in all_dog%}
+        <p>{{dog.name}}</p>
+        {% endfor %}
+    </form>
+</body>
+</html>

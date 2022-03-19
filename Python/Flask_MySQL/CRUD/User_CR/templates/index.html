@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+    <link type="text/javascript" href="{{ url_for('static', filename='js/my_script.js') }}">
+
+</head>
+<body>
+    <form action="/process" method="post">
+    <div class="container">
+        <div class="box-survey">
+            <h1>Dojo Survery</h1>
+            <div class="box">
+                <label>Name: </label>
+                <input type="text" name="name" placeholder="John">
+            </div>
+            <div class="box">
+                <label for="Location">Dojo Location: </label>
+                <select name="location">
+                    <option>Bellevue, WA</option>
+                    <option>Boise, ID</option>
+                    <option>Chicago, IL</option>
+                    <option>Los Angeles, CA</option>
+                    <option>Silicon Valley, CA</option>
+                </select>
+            </div>
+    
+            <div class="box">
+                <label for="Language">Favorite Language: </label>
+                <select name="language">
+                    <option>Ada</option>
+                    <option>Fortran</option>
+                    <option>Pascal</option>
+                    <option>Java</option>
+                </select>
+            </div>
+            <div class="box">
+                <label for="comment">Comment (optional): </label>
+                
+            </div>
+            <div class="comment">
+                <textarea name="comment" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

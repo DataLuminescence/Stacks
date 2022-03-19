@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <link   
+        type="text/javascript"
+        href="{{ url_for('static', filename='js/my_script.js') }}"
+    >
+
+</head>
+<body>
+    <form action="/dogs/create" method="post">
+        <label for="">Name</label>
+        <input type="text" name="name">
+        <label for="">Age</label>
+        <input type="text" name="age">
+        <label for="">Hair Color</label>
+        <input type="text" name="hair_color">
+        <input type="submit" value="Create Dog">
+    </form>
+</body>
+</html>
