@@ -1,0 +1,55 @@
+SELECT * FROM dojos
+
+INSERT INTO `dojos_and_ninjas_schema`.`dojos` (`name`, `created_at`, `updated_at`) 
+VALUES ('Water', '2001-02-01 00:00:01', '2002-01-01 00:00:01');
+
+INSERT INTO `dojos_and_ninjas_schema`.`dojos` (`name`, `created_at`, `updated_at`) 
+VALUES ('Rock', '2001-02-01 00:00:01', '2002-01-01 00:00:01');
+
+INSERT INTO `dojos_and_ninjas_schema`.`dojos` (`name`, `created_at`, `updated_at`) 
+VALUES ('Fire', '2001-02-01 00:00:01', '2002-01-01 00:00:01');
+
+DELETE FROM dojos
+WHERE id > 0;
+
+INSERT INTO `dojos_and_ninjas_schema`.`dojos` (`name`, `created_at`, `updated_at`) 
+VALUES ('Leaf', '2001-02-01 00:00:01', '2002-01-01 00:00:01');
+
+INSERT INTO `dojos_and_ninjas_schema`.`dojos` (`name`, `created_at`, `updated_at`) 
+VALUES ('Ghost', '2001-02-01 00:00:01', '2002-01-01 00:00:01');
+
+INSERT INTO `dojos_and_ninjas_schema`.`dojos` (`name`, `created_at`, `updated_at`) 
+VALUES ('Poison', '2001-02-01 00:00:01', '2002-01-01 00:00:01');
+
+INSERT INTO `dojos_and_ninjas_schema`.`ninjas` (`first_name`, `last_name`, `age`, `created_at`, `updated_at`, `dojo_id`) 
+VALUES ('Naruto', 'Uzumaki', '16', '2001-02-01 00:00:01', '2002-01-01 00:00:01', '4');
+
+INSERT INTO `dojos_and_ninjas_schema`.`ninjas` (`first_name`, `last_name`, `age`, `created_at`, `updated_at`, `dojo_id`) 
+VALUES ('Sasuke', 'Uchiha', '17', '2001-02-01 00:00:01', '2002-01-01 00:00:01', '4');
+
+INSERT INTO `dojos_and_ninjas_schema`.`ninjas` (`first_name`, `last_name`, `age`, `created_at`, `updated_at`, `dojo_id`) 
+VALUES ('Sakura', 'Haruno', '16', '2001-02-01 00:00:01', '2002-01-01 00:00:01', '4');
+
+INSERT INTO `dojos_and_ninjas_schema`.`ninjas` (`first_name`, `last_name`, `age`, `created_at`, `updated_at`, `dojo_id`) 
+VALUES ('Neji', 'Hyuga', '16', '2001-02-01 00:00:01', '2002-01-01 00:00:01', '5');
+
+INSERT INTO `dojos_and_ninjas_schema`.`ninjas` (`first_name`, `last_name`, `age`, `created_at`, `updated_at`, `dojo_id`) 
+VALUES ('Hinata', 'Hyuga', '16', '2001-02-01 00:00:01', '2002-01-01 00:00:01', '5');
+
+INSERT INTO `dojos_and_ninjas_schema`.`ninjas` (`first_name`, `last_name`, `age`, `created_at`, `updated_at`, `dojo_id`) 
+VALUES ('Shikamaru', 'Nara', '16', '2001-02-01 00:00:01', '2002-01-01 00:00:01', '5');
+
+INSERT INTO `dojos_and_ninjas_schema`.`ninjas` (`first_name`, `last_name`, `age`, `created_at`, `updated_at`, `dojo_id`) 
+VALUES ('Ino', 'Yamanaka', '16', '2001-02-01 00:00:01', '2002-01-01 00:00:01', '6');
+
+INSERT INTO `dojos_and_ninjas_schema`.`ninjas` (`first_name`, `last_name`, `age`, `created_at`, `updated_at`, `dojo_id`) 
+VALUES ('Rock', 'Lee', '16', '2001-02-01 00:00:01', '2002-01-01 00:00:01', '6');
+
+SELECT * FROM ninjas
+WHERE dojo_id LIKE 4
+
+SELECT * FROM ninjas
+WHERE dojo_id = (SELECT MAX(dojo_id) FROM ninjas);
+
+SELECT * FROM dojos
+WHERE id = (SELECT MAX(id) FROM dojos);

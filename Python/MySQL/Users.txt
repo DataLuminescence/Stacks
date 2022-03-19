@@ -1,0 +1,29 @@
+SELECT * FROM users;
+
+INSERT INTO `user_scema`.`users` (`first_name`, `last_name`, `email`, `created_at`, `updated_at`) 
+VALUES ('Leo', 'Robles', 'leo@gmail.com', '2001-02-01 00:00:01', '2002-01-01 00:00:01');
+
+INSERT INTO `user_scema`.`users` (`first_name`, `last_name`, `email`, `created_at`, `updated_at`) 
+VALUES ('Joe', 'Doe', 'CatCrazy@gmail.com', '2001-02-01 00:00:01', '2002-01-01 00:00:01');
+
+INSERT INTO `user_scema`.`users` (`first_name`, `last_name`, `email`, `created_at`, `updated_at`) 
+VALUES ('Janna', 'Bannana', 'DogDame@gmail.com', '2001-02-01 00:00:01', '2002-01-01 00:00:01');
+
+SELECT * FROM users;
+
+SELECT * FROM users
+WHERE email LIKE "leo@gmail.com";
+
+SELECT * FROM users
+WHERE ID = (SELECT MAX(ID) FROM users);
+
+UPDATE `users_scema`.`users` SET `last_name` = 'Pancakes' WHERE (`id` = '3');
+
+DELETE FROM users
+WHERE id = 2;
+
+SELECT * FROM users
+order by first_name ASC;
+
+SELECT * FROM users
+order by first_name DESC;
