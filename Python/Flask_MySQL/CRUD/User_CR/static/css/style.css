@@ -22,7 +22,7 @@ button{
 .box-survey {
     background-color: #33393e;
     color: white;
-    width: 300px;
+    width: 600px;
     height: 500px;
     display: flex;
     flex-direction: column;

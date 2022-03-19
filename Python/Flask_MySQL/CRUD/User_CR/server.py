@@ -1,26 +1,23 @@
-from flask import Flask, render_template, request, redirect, session  #import flask and allow us to create our application
+from flask import Flask, render_template, request, redirect
+# import the class from friend.py
+from users import User
 app = Flask(__name__)
-app.secret_key = "asdfghjkl"
 
-@app.route('/')
+
+@app.route("/")
 def index():
-    return render_template("index.html")
+    # call the get all classmethod to get all friends
+    users_info = User.get_all()
+    print(users_info)
+    return render_template("read.html", users_info=users_info)
 
-@app.route('/process', methods=['POST'])
-def process():
-    print("Got Post Info")
-    form = {
-        'name': request.form['name'],
-        'location': request.form['location'],
-        'language': request.form['language'],
-        'comment': request.form['comment']
-            }
-    session['form'] = form
-    return redirect('/result/')
+@app.route("/")
+def index():
+    # call the get all classmethod to get all friends
+    users_info = User.get_all()
+    print(users_info)
+    return render_template("read.html", users_info=users_info)
 
-@app.route('/result/')
-def result():
-    return render_template("results.html", result = session['form'])
-
-if __name__=="__main__":
+            
+if __name__ == "__main__":
     app.run(debug=True)
