@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+    <link type="text/javascript" href="{{ url_for('static', filename='js/my_script.js') }}">
+
+</head>
+<body>
+    <form action="/process" method="post">
+    <div class="container">
+        <div class="box-survey">
+            <h1>Create</h1>
+            <div class="box">
+                <label>First Name: </label>
+                <input type="text" name="first_name" placeholder="John">
+            </div>
+            <div class="box">
+                <label>Last Name: </label>
+                <input type="text" name="last_name">
+            </div>
+            <div class="box">
+                <label>Email: </label>
+                <input type="text" name="email">
+            </div>
+            <div>
+                <input type="submit" value="Add User">
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
