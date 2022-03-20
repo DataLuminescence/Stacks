@@ -32,8 +32,3 @@ class User:
         query = "INSERT INTO users (first_name, last_name, email) VALUES (%(first_name)s, %(last_name)s, %(email)s )"
         return mysql.query_db(query, data)
 
-    # @classmethod
-    # def get_user(cls, data):
-    #     query = "SELECT * FROM users WHERE id = %(id)s;"
-    #     results = connectToMySQL("users_db").query_db(query)
-
