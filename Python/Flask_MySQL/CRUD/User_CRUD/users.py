@@ -1,7 +1,3 @@
-# import the function that will return an instance of a connection
-from pydoc import classname
-from sqlite3 import connect
-from unittest import result
 from mysqlconnection import connectToMySQL
 from flask import request
 
@@ -23,6 +19,7 @@ class User:
         results = connectToMySQL('users_db').query_db(query)
         # Create an empty list to append our instances of users
         users_list = []
+
         # Iterate over the db results and create instances of users with cls.
         for dict in results:
             users_list.append( cls(dict) )
@@ -50,3 +47,10 @@ class User:
     def delete_user(cls, data):
         query = "DELETE FROM users WHERE id = %(id)s;"
         return connectToMySQL("users_db").query_db(query, data)
+
+    @classmethod
+    def get_recent_user(cls):
+        query = "SELECT * FROM users ORDER BY ID DESC;"
+        results = connectToMySQL("users_db").query_db(query)
+        return results[0]
+
