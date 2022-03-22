@@ -14,8 +14,10 @@
 <body>
     <div class="container">
         <div class="box-user-info">
-            <h1>User {{get_single_user.id}}</h1>
-            <a href="/">Home</a>
+            <div class="box-banner">
+                <h1>User {{get_single_user.id}}</h1>
+                <a href="/">Home</a>
+            </div>
             <div class="box">
                 <label for="Full Name">Full Name: </label>
                 <p>{{get_single_user.first_name}} {{get_single_user.last_name}}</p>

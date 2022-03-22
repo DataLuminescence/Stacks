@@ -18,22 +18,19 @@
     <div class="container">
         <div class="box-user-info">
             <div class="box-banner">
-                <h1>Edit User (Add User ID Here)</h1>
+                <h1>Edit User {{get_single_user.id}}</h1>
                 <a href="/">Home</a>
             </div>
             <div class="box">
                 <label>First Name: </label>
-                <!-- Add functionality to placeholder to take value of current user -->
                 <input type="text" name="first_name" value="{{get_single_user.first_name}}">
             </div>
             <div class="box">
                 <label>Last Name: </label>
-                <!-- Add functionality to placeholder to take value of current user -->
                 <input type="text" name="last_name" value={{get_single_user.last_name}}>
             </div>
             <div class="box">
                 <label>Email: </label>
-                <!-- Add functionality to placeholder to take value of current user -->
                 <input type="text" name="email" value={{get_single_user.email}}>
             </div>
             <div>

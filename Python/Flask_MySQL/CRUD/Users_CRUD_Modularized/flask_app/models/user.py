@@ -1,9 +1,5 @@
 # import the function that will return an instance of a connection
-from pydoc import classname
-from sqlite3 import connect
-from unittest import result
-from mysqlconnection import connectToMySQL
-from flask import request
+from flask_app.config.mysqlconnection import connectToMySQL
 
 # model the class after the user table from our database
 class User:
