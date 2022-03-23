@@ -12,7 +12,7 @@
     >
 </head>
 <body>
-    <form action="/dojos/create" method="post">    
+    <form action="/dojos/create_dojo" method="post">    
         <div class="container">
             <div class="box-user-info">
                 <div class="box-banner">
@@ -22,7 +22,7 @@
                 
                 <div class="box">
                     <label>Name: </label>
-                    <input type="text" name="dojo_name" placeholder="">
+                    <input type="text" name="name">
                 </div>
                 <div>
                     <input type="submit" value="Create">
@@ -37,17 +37,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for Dojos in get_all_dojos: %}
+                            {% for Dojo in get_all_dojos: %}
                             <tr>
-                                <td>{{Dojos.id}}</td>
-                                <td>{{Dojos.name}}</td>
+                                <td>{{Dojo.id}}</td>
+                                <td>{{Dojo.name}}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
                 </div>
                 <div class="box">
-                    <a href="/ninjas/create">Add Ninja</a>
+                    <a href="/dojos/new_ninja">Add Ninja</a>
                 </div>
             </div>
         </div>

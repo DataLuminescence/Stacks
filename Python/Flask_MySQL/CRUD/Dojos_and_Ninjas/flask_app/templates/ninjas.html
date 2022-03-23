@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+<body>
+    <form action="/dojos/create_ninja" method="post">    
+        <div class="container">
+            <div class="box-user-info">
+                <div class="box-banner">
+                    <h1>New Ninja</h1>
+                </div>
+                
+                <div class="box">
+                    <label>Dojo: </label>
+                    <select name="dojo_id">
+                        <option selected>Select</option>
+                        {% for dict in get_all_dojos %}
+                        <option value="{{dict.id}}">{{dict.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="box">
+                    <label>First Name: </label>
+                    <input type="select" name="first_name">
+                </div>
+                <div class="box">
+                    <label>Last Name: </label>
+                    <input type="select" name="last_name">
+                </div>
+                <div class="box">
+                    <label>Age: </label>
+                    <input type="select" name="age">
+                </div>
+                <div>
+                    <input type="submit" value="Create">
+                </div>
+                <div class="box">
+                    <a href="/dojos">Home</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>

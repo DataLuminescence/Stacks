@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+<body>
+    <form action="" method="post">    
+        <div class="container">
+            <div class="box-user-info">
+                <div class="box-banner">
+                    <h1>Variable Insert</h1>
+                </div>
+                
+                <div class="box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Age</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for Dojo in get_all_dojos: %}
+                            <tr>
+                                <td>Ninja at first ID Variable</td>
+                                <td>Ninja at first ID Variable</td>
+                                <td>Ninja at first ID Variable</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box">
+                    <a href="/dojos">Home</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>
