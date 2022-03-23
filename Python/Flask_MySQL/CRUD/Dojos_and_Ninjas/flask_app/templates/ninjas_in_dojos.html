@@ -16,7 +16,7 @@
         <div class="container">
             <div class="box-user-info">
                 <div class="box-banner">
-                    <h1>Variable Insert</h1>
+                    <h1>{{ninjas_in_dojos.name}} Ninjas</h1>
                 </div>
                 
                 <div class="box">
@@ -29,11 +29,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for Dojo in get_all_dojos: %}
+                            {% for ninja in ninjas_in_dojos.ninjas_list: %}
                             <tr>
-                                <td>Ninja at first ID Variable</td>
-                                <td>Ninja at first ID Variable</td>
-                                <td>Ninja at first ID Variable</td>
+                                <td>{{ninja.first_name}}</td>
+                                <td>{{ninja.last_name}}</td>
+                                <td>{{ninja.age}}</td>
                             </tr>
                             {% endfor %}
                         </tbody>

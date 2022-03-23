@@ -25,8 +25,10 @@ class Ninja:
             ninjas_list.append( cls(dict) )
         return ninjas_list
     
+    # Takes in data from our input fields in ninjas.html via our form. Creates a query which we pass 
     @classmethod
     def create_ninja(cls, data):
         mysql = connectToMySQL("dojos_and_ninjas_schema")
         query = "INSERT INTO ninjas (first_name, last_name, age, dojo_id ) VALUES (%(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s);"
+        # Returns id number of newly created ninja in database
         return mysql.query_db(query, data)

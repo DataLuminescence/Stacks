@@ -1,6 +1,5 @@
 # import the function that will return an instance of a connection
-from Python.Flask_MySQL.CRUD.Dojos_and_Ninjas.flask_app.controllers.dojos import dojos
-from Python.Flask_MySQL.CRUD.Dojos_and_Ninjas.flask_app.models.ninja import Ninja
+from flask_app.models.ninja import Ninja
 from flask_app.config.mysqlconnection import connectToMySQL
 
 # model the class after the user table from our database
@@ -8,6 +7,7 @@ class Dojo:
     def __init__( self , data ):
         self.id = data['id']
         self.name = data['name']
+        self.ninjas_list = []
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
@@ -30,17 +30,19 @@ class Dojo:
         query = "INSERT INTO dojos ( name, created_at, updated_at ) VALUES ( %(name)s, NOW() , NOW() );"
         return mysql.query_db(query, data)
 
-
-
     @classmethod
     def join_dojos_and_ninjas(cls,data):
         
-        query ="select * from dojo LEFT JOIN ninjas ON dojo.id = ninjas.dojo_id where dojo_id = %(dojo_id)s;"
-        ninjas_in_dojos = connectToMySQL("dojos_and_ninjas_schema").query_db(query,data)
+        # Obtain joined data after ninja is created by create_ninja.
+        query ="select * from dojos LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id where dojo_id = %(dojo_id)s;"
+        joined_dojos_and_ninjas_data = connectToMySQL("dojos_and_ninjas_schema").query_db(query,data)
         
-        if len(ninjas_in_dojos != 0):
+        # Validates 
+        if joined_dojos_and_ninjas_data:
+            dojo = cls(joined_dojos_and_ninjas_data[0])
 
-            for ninjas in ninjas_in_dojos:
+            for ninjas in joined_dojos_and_ninjas_data:
+                
                 ninjas_data = {
                     'id': ninjas['ninjas.id'],
                     'first_name': ninjas['first_name'],
@@ -50,7 +52,8 @@ class Dojo:
                     'created_at': ninjas['ninjas.created_at'],
                     'updated_at': ninjas['ninjas.updated_at']
                 }
-                ninjas_in_dojos.ninjas.append(Ninja(ninjas_data))
-            return ninjas_in_dojos
+                dojo.ninjas_list.append(Ninja(ninjas_data))
+
+            return dojo
         return "Nothing here"
         

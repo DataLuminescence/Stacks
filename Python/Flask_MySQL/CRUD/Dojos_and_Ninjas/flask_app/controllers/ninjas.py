@@ -16,10 +16,12 @@ def load_new_ninja():
 
 # ACTION ROUTES -------------------------------------------------------------------
 
-# Creates ninja in new ninja page. Calls route to show ninjas in user selected dojo
+# Creates ninja in new ninja page. Calls dojo_show route to show ninjas in user selected dojo
 @app.route("/dojos/create_ninja", methods = ["POST"]) 
 def create_ninja():
+    # Takes newly created ninja attributes via request form
     Ninja.create_ninja(request.form)
+    # Returns dojo id by accessing dojo_id in request.form
     return redirect(f"/dojos/dojo_show/{request.form['dojo_id']}")
 
 if __name__ == "__main__":

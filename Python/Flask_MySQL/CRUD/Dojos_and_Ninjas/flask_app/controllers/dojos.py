@@ -22,13 +22,16 @@ def dojos():
         print(dict.id, dict.name)
     return render_template("dojos.html", get_all_dojos = get_all_dojos)
 
-# Loads Dojo Show page which displays the ninjas in the user selected dojo
+# Loads Dojo Show page. Obtain ID of dojo to be displayed when ninja is created.
 @app.route("/dojos/dojo_show/<int:id>")
 def load_dojo_show(id):
+    
+    # Create a dictionary for the dojo id which corresponds to the newly created ninja
     ninjas_data = {
         'dojo_id' : id
     }
 
+    # Merge the dojo and ninja data to be displayed in the ninjas_in_dojos route
     ninjas_in_dojos = Dojo.join_dojos_and_ninjas(ninjas_data)
     return render_template("ninjas_in_dojos.html", ninjas_in_dojos = ninjas_in_dojos)
 
