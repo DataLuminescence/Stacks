@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+<body>
+
+    <div class="container">
+        <div class="box-user-info">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+    
+            <div class="box">
+                <h1>Register</h1>
+            </div>
+            <form action="/register_user" method="post">
+                <div class="box">
+                    <label>First Name: </label>
+                    <input type="text" name="first_name">
+                </div>
+                <div class="box">
+                    <label>Last Name: </label>
+                    <input type="text" name="last_name">
+                </div>
+                <div class="box">
+                    <label>Email: </label>
+                    <input type="text" name="email">
+                </div>
+                <div class="box">
+                    <label>Password: </label>
+                    <input type="text" name="password">
+                </div>
+                <div class="box">
+                    <label>Confirm Password: </label>
+                    <input type="text" name="conf_pass">
+                </div>
+                <div>
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+
+            <form action="/login_user" method="post">
+                <div class="box">
+                    <h1>Login</h1>
+                </div>
+                <div class="box">
+                    <label>Email: </label>
+                    <input type="text" name="email">
+                </div>
+                <div class="box">
+                    <label>Password: </label>
+                    <!-- Change to type password after testing -->
+                    <input type="text" name="password"> 
+                </div>
+                <div>
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
