@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipies</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+<form action="/user/create" method="post">
+    <div class="container">
+        <div class="box-user-info">
+            <div class="box-banner">
+                <h1>Welcome Insert User Name</h1>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout">Logout</a>
+            </div>
+            <div class="box">
+                <h1>Recipe Name 1</h1>
+            </div>
+            <div>
+                <p>Description: Insert description</p>
+            </div>
+            <div>
+                <p>Under 30: Insert yes/no</p>
+            </div>
+            <div>
+                <p>Instruction: Insert instructions</p>
+            </div>
+            <div>
+                <p>Date Made: Insert date created</p>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

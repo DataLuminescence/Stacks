@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipies</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+<body>
+    <div class="container">
+        <div class="box-user-info">
+            <div class="box-banner">
+                <h1>Welcome {{user.first_name}}</h1>
+                <a href="/recipe/new">Create</a>
+                <a href="/logout">Logout</a>
+            </div>
+            <div>These are the recipies</div>
+            <div class="box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Under 30</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Name</td>
+                            <td>Under 30 (Yes/No)</td>
+                            <td><a href="/recipe_view">View Instructions</a> | <a href="/recipe_edit">Edit</a> | <a href="/recipe_delete">Delete</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
