@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Together</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+<form action="/user/create" method="post">
+    <div class="container">
+        <div class="box-user-info">
+            <div class="box-banner">
+                <h1>Rock On {{user.first_name}}</h1>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout">Logout</a>
+            </div>
+            <div class="box">
+                <label for="">My Bands:</label>
+            </div>
+            {% for dict in one_band %}
+            <div>
+                <p>{{dict.band_name}}</p><a href="/edit/{{dict.id}}">Edit</a>  <a href="/delete_band/{{dict.id}}">Delete</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</form>
+</body>
+</html>

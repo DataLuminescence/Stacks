@@ -18,8 +18,8 @@ def dojos():
     # call the get all classmethod to get all dojos in the database
     get_all_dojos = Dojo.get_all()
     # For debug purposes
-    for dict in get_all_dojos: 
-        print(dict.id, dict.name)
+    # for dict in get_all_dojos: 
+    #     print(dict.id, dict.name)
     return render_template("dojos.html", get_all_dojos = get_all_dojos)
 
 # Loads Dojo Show page. Obtain ID of dojo to be displayed when ninja is created.

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Together</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+<body>
+    <div class="container">
+        <div class="box-user-info">
+            <div class="box-banner">
+                <h1>Rock On {{user.first_name}}!!!</h1>
+                <a href="/mybands">My Bands</a>
+                <a href="/new/sighting">New Band</a>
+                <form action="/logout">
+                <input type="submit"value="Logout">
+                </form>
+            </div>
+            <h2>All Bands</h2>
+            <div class="box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Band Name</th>
+                            <th scope="col">Founding Member</th>
+                            <th scope="col">Genre</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for dict in all_bands %}
+                        <tr>                            
+                            <td>{{dict.band_name}}</td>
+                            <td>{{dict.creator.first_name}} {{dict.creator.last_name}}</td>
+                            <td>{{dict.genre}}</td>    
+                            {% if dict.creator.id == user.id %}
+                            <td><a href="/edit/{{dict.id}}">Edit</a> | <a href="/delete_band/{{dict.id}}">Delete</a></td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
