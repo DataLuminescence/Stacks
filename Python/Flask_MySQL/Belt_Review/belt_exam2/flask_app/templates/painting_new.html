@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Together</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+<body>
+
+    <div class="container">
+        <div class="box-user-info">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="box-banner">
+                <h1>Rock On {{user.first_name}}</h1>
+                <a href="/band/mybands">My Bands</a>
+                <a href="/dashboard">Dashboard</a>
+                <form action="/logout">
+                <input type="submit"value="Logout">
+                </form>
+            </div>
+            <div>
+                <h2>Create a Band</h2>
+            </div>
+            <div class="box">
+            <!-- add route below -->
+            <form action="/band/register" method="post">
+                <div class="box">
+                    <label>Band Name: </label>
+                    <input type="text" name="band_name">
+                </div>
+                <div class="box">
+                    <label>Music Genre: </label>
+                    <input type="text" name="genre">
+                </div>
+                <div class="box">
+                    <label>Home City: </label>
+                    <input type="text" name="homecity">
+                </div>
+                <div>
+                    <input type="submit" value="Create">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

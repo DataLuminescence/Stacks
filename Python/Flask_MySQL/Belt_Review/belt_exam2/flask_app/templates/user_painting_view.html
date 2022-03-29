@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Together</title>
+    <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+    <div class="container">
+        <div class="box-user-info">
+            <div class="box-banner">
+                <h1>Rock On {{user_bands.first_name}}</h1>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout">Logout</a>
+            </div>
+            <div class="box">
+                <label for="">My Bands:</label>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Band Name</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for band in user_bands.bands %}
+                    <tr>
+                        <td>{{band.band_name}}</td> 
+                        <td><a href="/band/edit/{{band.id}}">Edit</a> | <a href="/band/delete/{{band.id}}">Delete</a></td>                            
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>            
+        </div>
+    </div>
+</body>
+</html>
