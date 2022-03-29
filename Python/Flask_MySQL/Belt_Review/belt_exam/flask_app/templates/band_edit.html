@@ -12,7 +12,6 @@
     >
 </head>
 <body>
-
     <div class="container">
         <div class="box-user-info">
             {% with messages = get_flashed_messages() %}
@@ -24,7 +23,7 @@
             {% endwith %}
             <div class="box-banner">
                 <h1>Rock On {{user.first_name}}</h1>
-                <a href="/mybands">My Bands</a>
+                <a href="/band/mybands">My Bands</a>
                 <a href="/dashboard">Dashboard</a>
                 <form action="/logout" method="post">
                 <input type="submit"value="Logout">
@@ -36,7 +35,7 @@
                 </div>
             <!-- Update action must validate before going to dashboard -->
             <!-- add prexisting value to these fields -->
-            <form action="/dashboard" method="post">
+            <form action="/band/update/{{one_band.id}}" method="post">
                 <div class="box">
                     <label>Name: </label>
                     <input type="text" name="band_name" value="{{one_band.band_name}}">

@@ -1,7 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import user
 from flask import flash
-from flask_app import app
 
 # model the class after the user table from our database
 class Band:
@@ -49,7 +48,13 @@ class Band:
     @classmethod
     def update_band_by_band_id(cls, data):
         query = "UPDATE bands SET band_name = %(band_name)s, genre = %(genre)s, homecity = %(homecity)s, updated_at = NOW() WHERE id = %(id)s;"
-        return connectToMySQL("users_db").query_db(query, data)
+        results = connectToMySQL(cls.db).query_db(query, data)
+        # If the user has no bands flash that
+        if not results:
+            flash("User has no bands in the database")
+            return False
+        
+        return 
 
     # gets query information of all bands based on user id
     @classmethod
@@ -67,7 +72,7 @@ class Band:
         # returns dictionary of band data associated to an id
         return results
 
-
+    # this belongs in the user model (get user with bands) EDIT
     # gets query information of all bands based on user id
     @classmethod
     def get_user_and_band_by_user_id(cls,data):
@@ -75,13 +80,17 @@ class Band:
                 ON bands.user_id = users.id
                 WHERE users.id = %(id)s;"""
         results = connectToMySQL(cls.db).query_db(query,data)
-
+        
+        # If the user has no bands flash that
+        if not results:
+            flash("User has no bands in the database")
+            return False
         # returns dictionary of band data associated to an id
         return results
 
     # gets query information of all bands based on user id
     @classmethod
-    def get_all_user_and_band(cls,data):
+    def get_all_user_and_band(cls,data): # getting all bands with founders, change name EDIT
         query = """SELECT * FROM bands JOIN users 
                 ON bands.user_id = users.id;"""
         results = connectToMySQL(cls.db).query_db(query,data)

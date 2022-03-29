@@ -12,7 +12,6 @@
     >
 
 </head>
-<form action="/user/create" method="post">
     <div class="container">
         <div class="box-user-info">
             <div class="box-banner">
@@ -25,11 +24,10 @@
             </div>
             {% for dict in one_band %}
             <div>
-                <p>{{dict.band_name}}</p><a href="/edit/{{dict.id}}">Edit</a>  <a href="/delete_band/{{dict.id}}">Delete</a>
+                <p>{{dict.band_name}}</p><a href="/band/edit/{{dict.id}}">Edit</a>  <a href="/band/delete/{{dict.id}}">Delete</a>
             </div>
             {% endfor %}
         </div>
     </div>
-</form>
 </body>
 </html>

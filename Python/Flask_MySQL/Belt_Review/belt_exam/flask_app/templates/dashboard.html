@@ -16,8 +16,8 @@
         <div class="box-user-info">
             <div class="box-banner">
                 <h1>Rock On {{user.first_name}}!!!</h1>
-                <a href="/mybands">My Bands</a>
-                <a href="/new/sighting">New Band</a>
+                <a href="/band/mybands">My Bands</a>
+                <a href="/band/new">New Band</a>
                 <form action="/logout">
                 <input type="submit"value="Logout">
                 </form>
@@ -40,7 +40,7 @@
                             <td>{{dict.creator.first_name}} {{dict.creator.last_name}}</td>
                             <td>{{dict.genre}}</td>    
                             {% if dict.creator.id == user.id %}
-                            <td><a href="/edit/{{dict.id}}">Edit</a> | <a href="/delete_band/{{dict.id}}">Delete</a></td>
+                            <td><a href="/band/edit/{{dict.id}}">Edit</a> | <a href="/band/delete/{{dict.id}}">Delete</a></td>
                             {% endif %}
                         </tr>
                         {% endfor %}

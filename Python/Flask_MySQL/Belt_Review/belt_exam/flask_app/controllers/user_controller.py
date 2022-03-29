@@ -25,7 +25,7 @@ def index():
 #------------------------------------------------------------------------------
 
 # when register button is pressed on home page
-@app.route("/register_user", methods=['POST'])
+@app.route("/user/register", methods=['POST'])
 def register_user():
 
     # if user submitted registration info is invalid return user to home and 
@@ -58,7 +58,7 @@ def register_user():
 # LOGIN ROUTES 
 #------------------------------------------------------------------------------
 
-@app.route("/login_user", methods=['POST'])
+@app.route("/user/login", methods=['POST'])
 def login_user():
 
     # if user submitted login info is invalid return user to home and 
@@ -98,7 +98,7 @@ def dashboard():
     return render_template("dashboard.html", user = user, all_bands = all_bands)
 
 #------------------------------------------------------------------------------
-# DASHBOARD ROUTES 
+# LOGOUT ROUTES 
 #------------------------------------------------------------------------------
 
 # Logs user out of session by clearing the session, then redirects them to home

@@ -1,4 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app.models import band
 from flask import flash
 import re  
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
@@ -34,26 +35,26 @@ class User:
     @classmethod
     def get_by_user_id(cls, data):
         query = "SELECT * FROM users WHERE id = %(id)s;"
-        result = connectToMySQL(cls.db).query_db(query,data)
+        results = connectToMySQL(cls.db).query_db(query,data)
         
         # If the length of the search is less tha 1. Didn't find a matching user
-        if not result:
+        if not results:
             flash("Id does not exist in database")
             return False
-        return cls(result[0])
+        return cls(results[0])
 
     #  gets user in databse based on thier email
     @classmethod
     def get_by_email(cls,data):
         # Perform a serch to see if the email(data) provided is in the server
         query = "SELECT * FROM users WHERE email = %(email)s;"
-        result = connectToMySQL(cls.db).query_db(query,data)
+        results = connectToMySQL(cls.db).query_db(query,data)
 
         # If the length of the search is less tha 1. Didn't find a matching user
-        if not result:
+        if not results:
             flash("Email/username does not exist in database")
             return False
-        return cls(result[0])
+        return cls(results[0])
 
     #  checks if user entered appropriate data into input fields in home page
     @staticmethod
@@ -113,3 +114,24 @@ class User:
             is_valid = False
         # If you want to add extra password validation add here    
         return is_valid
+
+    @classmethod
+    def get_band_of_user(cls,data):
+        query = "SELECT * FROM users LEFT JOIN bands ON users.id = bands.user_id WHERE users.id = %(id)s;"
+        results = connectToMySQL(cls.db).query_db(query, data)
+        if results:
+            user = cls(results[0])
+            if results[0]["bands.id"]:
+                user.bands = []
+                for row in results:
+                    data = {
+                        "user_id": row["user_id"],
+                        "id": row["bands.id"],
+                        "band_name": row["band_name"],
+                        "music_genre": row["music_genre"],
+                        "home_city": row["home_city"],
+                        "created_at": row["bands.created_at"],
+                        "updated_at": row["bands.updated_at"]
+                    }
+                user.bands.append(band.Band(data))
+        return user

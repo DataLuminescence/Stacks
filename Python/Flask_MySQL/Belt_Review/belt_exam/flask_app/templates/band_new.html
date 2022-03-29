@@ -24,7 +24,7 @@
             {% endwith %}
             <div class="box-banner">
                 <h1>Rock On {{user.first_name}}</h1>
-                <a href="/mybands">My Bands</a>
+                <a href="/band/mybands">My Bands</a>
                 <a href="/dashboard">Dashboard</a>
                 <form action="/logout">
                 <input type="submit"value="Logout">
@@ -35,7 +35,7 @@
             </div>
             <div class="box">
             <!-- add route below -->
-            <form action="/register_band" method="post">
+            <form action="/band/register" method="post">
                 <div class="box">
                     <label>Band Name: </label>
                     <input type="text" name="band_name">
