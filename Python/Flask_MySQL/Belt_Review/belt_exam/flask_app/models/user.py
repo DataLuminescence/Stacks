@@ -19,7 +19,7 @@ class User:
         self.password = data["password"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
-        self.bands = []
+        
     
     # add user into database and returns id to be used in program
     @classmethod
@@ -128,8 +128,8 @@ class User:
                         "user_id": row["user_id"],
                         "id": row["bands.id"],
                         "band_name": row["band_name"],
-                        "music_genre": row["music_genre"],
-                        "home_city": row["home_city"],
+                        "genre": row["genre"],
+                        "homecity": row["homecity"],
                         "created_at": row["bands.created_at"],
                         "updated_at": row["bands.updated_at"]
                     }

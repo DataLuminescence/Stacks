@@ -72,10 +72,10 @@ def view_band(): # change name EDIT
         "id" : session["user_id"]
     }
 
-    user = User.get_by_user_id(user_data)
-    one_band = Band.get_user_and_band_by_user_id(user_data) #one band not appropriate name EDIT
+    # user = User.get_by_user_id(user_data)
+    user_bands = User.get_band_of_user(user_data) #one band not appropriate name EDIT
 
-    return render_template("user_band_view.html", user = user, one_band = one_band)
+    return render_template("user_band_view.html", user_bands = user_bands)
 
 #------------------------------------------------------------------------------
 # CREATE BAND - ACTION

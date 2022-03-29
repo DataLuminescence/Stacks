@@ -72,22 +72,6 @@ class Band:
         # returns dictionary of band data associated to an id
         return results
 
-    # this belongs in the user model (get user with bands) EDIT
-    # gets query information of all bands based on user id
-    @classmethod
-    def get_user_and_band_by_user_id(cls,data):
-        query = """SELECT * FROM bands JOIN users 
-                ON bands.user_id = users.id
-                WHERE users.id = %(id)s;"""
-        results = connectToMySQL(cls.db).query_db(query,data)
-        
-        # If the user has no bands flash that
-        if not results:
-            flash("User has no bands in the database")
-            return False
-        # returns dictionary of band data associated to an id
-        return results
-
     # gets query information of all bands based on user id
     @classmethod
     def get_all_user_and_band(cls,data): # getting all bands with founders, change name EDIT
