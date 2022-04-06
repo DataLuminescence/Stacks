@@ -8,8 +8,9 @@ public class TestPuzzle {
 
         PuzzleJava appTest = new PuzzleJava();
 
-        appTest.getTenRolls(20, 0);
-
-
+        appTest.getTenRolls(21, 1);
+        System.out.print(appTest.getRandomLetter() + "\n");
+        System.out.print(appTest.generatePassword(8) + "\n");
+        appTest.generatePassword(4,8);
     }
 }
