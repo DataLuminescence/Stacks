@@ -29,14 +29,14 @@ public class TestCafe {
         menuItems.add("mocha");
         appTest.displayMenu(menuItems);
     
-        // System.out.println("\n----- Add Customer Test-----");
-        // ArrayList<String> customers = new ArrayList<String>();
+        System.out.println("\n----- Add Customer Test-----");
+        ArrayList<String> customers = new ArrayList<String>();
 
-        // // --- Test 4 times ---
-        // for (int i = 0; i < 4; i++) {
-        //     appTest.addCustomer(customers);
-        //     System.out.println("\n");
-        // }
+        // --- Test 4 times ---
+        for (int i = 0; i < 4; i++) {
+            appTest.addCustomer(customers);
+            System.out.println("\n");
+        }
 
         appTest.printPriceChart("Columbian Coffee Grounds", 15.0, 3);
         appTest.printPriceChart("Columbian Coffee Grounds", 2.00, 4, .50);
