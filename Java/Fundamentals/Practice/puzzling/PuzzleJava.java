@@ -50,7 +50,7 @@ public class PuzzleJava{
     }
 
     // What kind of array does it take any type of array?
-    // public void shuffleArray(){
+    // public void shuffleArray(ArrayList<T> someArray = new ArrayList<T>()){
 
     // }
 
