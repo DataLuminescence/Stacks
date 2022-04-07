@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-// import java.util.Order;
-// import jave.util.Item;
 
 public class TestOrders {
     public static void main(String[] args) {
