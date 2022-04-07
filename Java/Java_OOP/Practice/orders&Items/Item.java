@@ -1,4 +1,4 @@
-public class Item{
+class Item{
     public String name;
     public double price;
 }
