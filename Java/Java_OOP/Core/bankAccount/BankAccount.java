@@ -14,7 +14,7 @@ class BankAccount{
     public BankAccount(){
         this.checkingBalance = 100;
         this.savingsBalance = 100;
-        accountNum = randAccountNumber();
+        this.accountNum = randAccountNumber();
         this.accounts++;
     }
 
