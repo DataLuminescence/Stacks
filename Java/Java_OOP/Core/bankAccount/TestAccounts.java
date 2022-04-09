@@ -8,6 +8,5 @@ public class TestAccounts {
         account1.makeDeposit(300);
         account1.makeWithdrawal(500);
         account1.totalMoney();
-        account1.randAccountNumber();
     }
 }
